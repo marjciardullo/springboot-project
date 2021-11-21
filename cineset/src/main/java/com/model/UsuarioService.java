@@ -8,7 +8,7 @@ public class UsuarioService {
     @Autowired
     UsuarioDAO userDao;
 
-    public void inserirtUsuario(Usuario user) {
+    public void insertUsuario(Usuario user) {
         userDao.insertUsuario(user);
     }
 }
