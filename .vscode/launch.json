@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CinesetApplication<cineset>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cineset.cineset.CinesetApplication",
+            "projectName": "cineset",
+            "args": ""
+        }
+    ]
+}
