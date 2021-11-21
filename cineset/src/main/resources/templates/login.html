@@ -3,6 +3,7 @@
     <head>
         <meta charset="ISO-8859-1">
         <title>Login</title>
+		<meta http-equiv="Content-Type" content="text-html">
         	<link rel="stylesheet" type="text/css" th:href="@{assets/css/login.css}"/>
         	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
         	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
@@ -16,9 +17,9 @@
 			<div class="form-side">
 				<h2>Cineset</h2>
 				<span class="instruction">Please login to your account</span>
-				<form class="form" action="" name="login" method="post">
-					<input class="input" type="email" id="email" name="email" placeholder="e-mail" required>
-					<input class="input" type="password" id="password" name="password" placeholder="password" required>	
+				<form class="form" action="#" th:action="@{/usuario}" name="login" method="post" th:object="${usuario}">
+					<input class="input" type="text" th:field="*{EMAIL}" id="email" name="email" placeholder="e-mail" required>
+					<input class="input" type="password" th:field="*{SENHA}" id="password" name="password" placeholder="password" required>	
 					<input class="button" type="submit" name="button" value="LET ME IN">
 				</form>
 			</div>

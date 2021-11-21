@@ -20,15 +20,15 @@ public class UsuarioController {
     private ApplicationContext context;
 
     @GetMapping("/usuario")
-    public String formUsuario(Model model) {
+    public String login(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "formUsuario";
+        return "login";
     }
 
     @PostMapping("/usuario")
     public String postUsuario(@ModelAttribute Usuario user, Model model) {
         UsuarioService uService = context.getBean(UsuarioService.class);
         uService.inserirtUsuario(user);
-        return "success!!";
+        return "profile";
     }
 }
