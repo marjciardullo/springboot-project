@@ -28,7 +28,7 @@ public class UsuarioController {
     @PostMapping("/usuario")
     public String postUsuario(@ModelAttribute Usuario user, Model model) {
         UsuarioService uService = context.getBean(UsuarioService.class);
-        uService.inserirtUsuario(user);
+        uService.insertUsuario(user);
         return "profile";
     }
 }
