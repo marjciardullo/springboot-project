@@ -64,6 +64,10 @@
   text-align: left;
 }
 
+.form form fieldset:first-of-type {
+  padding: 0 0 15px 0;
+}
+
 .form form fieldset:last-of-type {
   padding: 0;
 }
@@ -75,7 +79,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 32px;
-  margin: 12px 0 0 0;
+  margin: 6px 0 0 0;
   outline: none;
   text-indent: 15px;
   color: #010101;

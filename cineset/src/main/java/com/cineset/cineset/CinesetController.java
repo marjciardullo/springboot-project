@@ -12,9 +12,9 @@ public class CinesetController {
         return "index";
     }
 
-    @GetMapping("/signup")
-    public String signup() {
-        return "signup";
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @GetMapping("/about")
@@ -25,6 +25,11 @@ public class CinesetController {
     @GetMapping("/profile")
     public String profile() {
         return "profile";
+    }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
     }
 
 }
