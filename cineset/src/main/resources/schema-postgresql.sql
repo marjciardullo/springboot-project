@@ -8,5 +8,9 @@ EMAIL VARCHAR
 (50),
 SENHA VARCHAR
 (10)
+<<<<<<< HEAD
 );
 
+=======
+);
+>>>>>>> a657e70af07238bdf36aaeb89d2ba2538632c65b

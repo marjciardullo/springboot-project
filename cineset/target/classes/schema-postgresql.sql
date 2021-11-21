@@ -8,5 +8,6 @@ EMAIL VARCHAR
 (50),
 SENHA VARCHAR
 (10)
+
 );
 
