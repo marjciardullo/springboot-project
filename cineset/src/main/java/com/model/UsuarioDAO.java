@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.Map;
+
 @Repository
 public class UsuarioDAO {
 
@@ -24,10 +26,17 @@ public class UsuarioDAO {
         String sql = "INSERT INTO usuario(NOME, EMAIL, SENHA)" + "VALUES(?,?,?)";
 
         Object[] object = new Object[3];
-        object[0] = usuario.getNOME();
+        object[0] = usuario.getNOMEUSUARIO();
         object[1] = usuario.getEMAIL();
         object[2] = usuario.getSENHA();
 
         jdbc.update(sql, object);
+    }
+
+    public Map<String, Object> selectUsuario(int ID) {
+        String sql = "SELECT * FROM Usuario WHERE Usuario.ID = ?";
+        Object[] object = new Object[1];
+        object[0] = ID;
+        return jdbc.queryForMap(sql, object);
     }
 }

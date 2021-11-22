@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +12,9 @@ public class UsuarioService {
 
     public void insertUsuario(Usuario user) {
         userDao.insertUsuario(user);
+    }
+
+    public Map<String, Object> selectUsuario(int ID) {
+        return userDao.selectUsuario(ID);
     }
 }

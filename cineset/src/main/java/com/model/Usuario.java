@@ -4,25 +4,25 @@ package com.model;
 //import org.yaml.snakeyaml.events.Event.ID;
 
 public class Usuario {
-    private String NOME, EMAIL;
+    private String NOMEUSUARIO, EMAIL;
     private int SENHA, ID;
 
     public Usuario() {
     }
 
-    public Usuario(String NOME, String EMAIL, int SENHA, int ID) {
-        this.NOME = NOME;
+    public Usuario(String NOMEUSUARIO, String EMAIL, int SENHA, int ID) {
+        this.NOMEUSUARIO = NOMEUSUARIO;
         this.EMAIL = EMAIL;
         this.SENHA = SENHA;
         this.ID = ID;
     }
 
-    public String getNOME() {
-        return NOME;
+    public String getNOMEUSUARIO() {
+        return NOMEUSUARIO;
     }
 
-    public void setNOME(String NOME) {
-        this.NOME = NOME;
+    public void setNOMEUSUARIO(String NOMEUSUARIO) {
+        this.NOMEUSUARIO = NOMEUSUARIO;
     }
 
     public String getEMAIL() {
