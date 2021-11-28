@@ -22,16 +22,15 @@ public class FilmesDAO {
         jdbc = new JdbcTemplate(dataSource);
     }
 
-    public void insertfilme(Filmes filme) {
-        String sql = "INSERT INTO filme(TITULO, GENERO, DIRETOR, IMAGEM_LINK, SINOPSE, ANO)" + "VALUES(?,?,?,?,?,?)";
+    public void insertfilme(Filmes filmes) {
+        String sql = "INSERT INTO Filmes(TITULO, GENEROFILME, DIRETOR, SINOPSE, BIRTHYEAR)" + "VALUES(?,?,?,?,?)";
 
-        Object[] object = new Object[6];
-        object[0] = filme.getTITULO();
-        object[1] = filme.getGENERO();
-        object[2] = filme.getDIRETOR();
-        object[3] = filme.getIMAGEM_LINK();
-        object[4] = filme.getSINOPSE();
-        object[5] = filme.getANO();
+        Object[] object = new Object[5];
+        object[0] = filmes.getTITULO();
+        object[1] = filmes.getGENEROFILME();
+        object[2] = filmes.getDIRETOR();
+        object[3] = filmes.getSINOPSE();
+        object[4] = filmes.getBIRTHYEAR();
 
         jdbc.update(sql, object);
     }

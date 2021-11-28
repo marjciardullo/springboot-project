@@ -60,12 +60,8 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-radius: 10px;
-	opacity: 0.8;
+	opacity: 0.5;
 	background-color: yellow;
-}
-
-.stock-image:hover {
-	opacity: 1;
 }
 
 .user-info {
@@ -73,6 +69,20 @@ body {
 	text-align: left;
 	justify-content: left;
 	align-items: flex-start;
+}
+
+.edit-info {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+}
+
+.edit-info div {
+	margin-bottom: 15px;
+}
+
+.edit-info span, b {
+	margin-right: 5px;
 }
 
 .username {
@@ -106,59 +116,33 @@ body {
 	justify-content: left;
 }
 
-p {
-	line-height: 1.3;
-}
-
 .userbio {
 	margin-left: 20px;
 	margin-bottom: 20px;
+	outline: none;
+	background-color: #161616;
+	border: 2px white solid;
+	border-radius: 3px;
+	color: white;
+	font-size: 15px;
+	padding: 10px;
 }
 
-.extra-info {
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+input {
+	outline: none;
+	background-color: #161616;
+	border-color: transparent;
+	border-bottom: 2px #fff solid;
+	border-radius: 3px;
+	color: white;
+	font-size: 15px;
 }
 
-.extra-info p {
-	margin-right: 20px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+textarea {
+	resize: none;
 }
 
-.extra-info span, b {
-	margin-right: 5px;
-}
-
-.extra-info .material-icons {
-	font-size: 18px;
-	margin-right: 3px;
-}
-
-.extra-info .fav {
-	margin-top: 5px;
-	cursor: pointer;
-}
-
-.extra-info .del {
-	margin-top: 5px;
-	cursor: pointer;
-}
-
-.fav:hover {
-	color: yellow;
-}
-
-.del {
-	display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.del:hover {
-	color: red;
+.edit-button {
+	background-color: transparent;
+	border: transparent;
 }

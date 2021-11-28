@@ -32,4 +32,9 @@ public class CinesetController {
         return "signup";
     }
 
+    @GetMapping("/addmovie")
+    public String addmovie() {
+        return "addmovie";
+    }
+
 }
