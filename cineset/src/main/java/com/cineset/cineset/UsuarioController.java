@@ -24,7 +24,7 @@ public class UsuarioController {
 
     @GetMapping("/usuario")
     public String login(Model model) {
-        model.addAttribute("usuario", new Usuario());
+        model.addAttribute("user", new Usuario());
         return "login";
     }
 
