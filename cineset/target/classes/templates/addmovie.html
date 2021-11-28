@@ -23,20 +23,29 @@
             </div>
         </div>
         <div class="movie-card">
-            <form class="form">
+            <form class="form"
+            action="#"
+            th:action="@{/filmes}"
+            name="login"
+            method="post"
+            th:object="${film}">
                 <div class="movie-infos">
                     <div class="first-section">
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" name="NOMEFILME">
+                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" field="*{TITULO}"
+                            name="TITULO">
                         </div>
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" name="NOMEFILME">
+                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" field="*{DIRETOR}"
+                            name="DIRETOR">
                         </div><div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" name="NOMEFILME">
+                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" field="*{BIRTHYEAR}"
+                            name="BIRTHYEAR">
                         </div>
                     </div>
                 </div>
-                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review"></textarea>
+                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review" field="*{SINOPSE}"
+                name="SINOPSE"></textarea>
                 <div style="display: flex; justify-content: flex-end;align-items: flex-end;">
                     <button type="submit" name="button">Save Review</button>
                 </div>

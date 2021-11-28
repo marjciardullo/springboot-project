@@ -4,20 +4,19 @@ package com.model;
 //import org.yaml.snakeyaml.events.Event.ID;
 
 public class Filmes {
-    private String TITULO, GENERO, DIRETOR, IMAGEM_LINK, SINOPSE;
-    private int ANO, IDFILME;
+    private String TITULO, GENEROFILME, DIRETOR, SINOPSE;
+    private int BIRTHYEAR, IDFILME;
 
     public Filmes() {
     }
 
-    public Filmes(String TITULO, String GENERO, String DIRETOR, String IMAGEM_LINK, String SINOPSE, int ANO,
+    public Filmes(String TITULO, String GENEROFILME, String DIRETOR, String IMAGEM_LINK, String SINOPSE, int BIRTHYEAR,
             int IDFILME) {
         this.TITULO = TITULO;
-        this.GENERO = GENERO;
+        this.GENEROFILME = GENEROFILME;
         this.DIRETOR = DIRETOR;
-        this.IMAGEM_LINK = IMAGEM_LINK;
         this.SINOPSE = SINOPSE;
-        this.ANO = ANO;
+        this.BIRTHYEAR = BIRTHYEAR;
         this.IDFILME = IDFILME;
     }
 
@@ -29,12 +28,12 @@ public class Filmes {
         this.TITULO = TITULO;
     }
 
-    public String getGENERO() {
-        return GENERO;
+    public String getGENEROFILME() {
+        return GENEROFILME;
     }
 
-    public void setGENERO(String GENERO) {
-        this.GENERO = GENERO;
+    public void setGENEROFILME(String GENEROFILME) {
+        this.GENEROFILME = GENEROFILME;
     }
 
     public String getDIRETOR() {
@@ -45,14 +44,6 @@ public class Filmes {
         this.DIRETOR = DIRETOR;
     }
 
-    public String getIMAGEM_LINK() {
-        return IMAGEM_LINK;
-    }
-
-    public void setIMAGEM_LINK(String IMAGEM_LINK) {
-        this.IMAGEM_LINK = IMAGEM_LINK;
-    }
-
     public String getSINOPSE() {
         return SINOPSE;
     }
@@ -61,12 +52,12 @@ public class Filmes {
         this.SINOPSE = SINOPSE;
     }
 
-    public int getANO() {
-        return ANO;
+    public int getBIRTHYEAR() {
+        return BIRTHYEAR;
     }
 
-    public void setANO(int ANO) {
-        this.ANO = ANO;
+    public void setBIRTHYEAR(int BIRTHYEAR) {
+        this.BIRTHYEAR = BIRTHYEAR;
     }
 
     public int getIDFILME() {

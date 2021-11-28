@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+    <head>
+        <meta charset="UFT-8">
+        <title>Edit Profile</title>
+        	<link rel="stylesheet" type="text/css" th:href="@{assets/css/edit.css}"/>
+        	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
+        	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+        	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+<body>
+	<div class="logo">
+		<span class="title">Cineset</span>
+		<span class="phrase">Tell us what you're watching</span>
+	</div>
+    <div class="container">
+    	<div class="stock-image"></div>
+    	<form class="user-info">
+    		<div class="username">
+                <div style="display: flex; align-items: center">
+        			<span class="material-icons">alternate_email</span><input class="user-name" type="text" placeholder="Username" name="NOMEUSUARIO" value="madeleine_ester">
+                </div>
+                <input type="submit" class="edit-button material-icons" name="button" value="save">
+    		</div>
+    		<textarea class="userbio" rows="12" cols="64" maxlength="500">Please write your new bio in here in 500 characters or less!</textarea>
+
+			<div class="edit-info">
+                <div>
+                    <b><span style="color:yellow">#</span>Gender:</b><input type="text" name="GENERO" placeholder="Gender" value="Female" >
+                </div>
+                <div>
+                    <b><span style="color:yellow">#</span>Born:</b><input type="text" name="ANO NASC" maxlength="4" placeholder="Birthyear" value="1995">
+                </div>
+                <div>
+                    <b><span style="color:yellow">#</span>Country:</b><input type="text" name="PAIS" placeholder="Country" value="Netherlands">
+                </div>
+		    </div>
+    	</form>
+    </div>
+</body>
+</html>

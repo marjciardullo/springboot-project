@@ -1,51 +1,98 @@
 <!DOCTYPE html>
 <html xmlns:th="http:www.thymeleaf.org">
-    <head>
-        <meta charset="UFT-8">
-        <title>Profile</title>
-        	<link rel="stylesheet" type="text/css" th:href="@{assets/css/profile.css}"/>
-        	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
-        	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
-        	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-<body>
-	<div class="logo">
-		<span class="title">Cineset</span>
-		<span class="phrase">Tell us what you're watching</span>
-	</div>
-    <div class="container">
-    	<div class="stock-image"></div>
-    	<div class="user-info">
-    		<div class="username">
-                <div style="display: flex; align-items: center">
-        			<span class="material-icons">alternate_email</span><span class="user-name">madeleine_elster</span>
-                </div>
-                <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
-    		</div>
-    		<div class="userbio">
-    			<p>Hi :) I'm Maddie and I've loved movies since I was young. I love using Cineset to keep track
-    			of all the movies I've been watching and enjoying lately. I'm also able to leave reviews and save the ones I liked
-    			best!</p>
-
-    			<p><b>I can't wait to watch more movies</b>and then lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-    			<p>At vero eos et accusamus <i>et iusto odio dignissimos ducimus qui blanditiis</i> praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-
-    			<div class="extra-info">
-			    	<p><b><span style="color:yellow">#</span>Gender:</b> Female</p>
-			    	<p><b><span style="color:yellow">#</span>Born:</b> 1995</p>
-			    	<p><b><span style="color:yellow">#</span>Country:</b> Netherlands</p>
-			    </div>
-			    <div class="extra-info">
-					<b><p class="fav"><span style="color:yellow">+</span> Add movie/review</p></b>
-			    	<b><p class="fav"><span style="color:yellow">❤</span> My favorite movies</p></b>
-			    </div>
-                <div class="extra-info">
-                    <b><p class="del" style="padding-top: 20px;"><span class="material-icons">delete</span> Delete my account</p></b>
-                </div>
-    		</div>
-    	</div>
+  <head>
+    <meta charset="UFT-8" />
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{assets/css/profile.css}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="logo">
+      <span class="title">Cineset</span>
+      <span class="phrase">Tell us what you're watching</span>
     </div>
-</body>
+    <div class="container">
+      <div class="stock-image"></div>
+      <div class="user-info">
+        <div class="username">
+          <div style="display: flex; align-items: center">
+            <span class="material-icons">alternate_email</span
+            ><span class="user-name">madeleine_elster</span>
+          </div>
+          <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
+        </div>
+        <div class="userbio">
+          <p>
+            Hi :) I'm Maddie and I've loved movies since I was young. I love
+            using Cineset to keep track of all the movies I've been watching and
+            enjoying lately. I'm also able to leave reviews and save the ones I
+            liked best!
+          </p>
+
+          <p>
+            <b>I can't wait to watch more movies</b>and then lorem ipsum dolor
+            sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <p>
+            At vero eos et accusamus
+            <i>et iusto odio dignissimos ducimus qui blanditiis</i> praesentium
+            voluptatum deleniti atque corrupti quos dolores et quas molestias
+            excepturi sint occaecati cupiditate non provident.
+          </p>
+
+          <div class="extra-info">
+            <p>
+              <b><span style="color: yellow">#</span>Gender:</b> Female
+            </p>
+            <p>
+              <b><span style="color: yellow">#</span>Born:</b> 1995
+            </p>
+            <p>
+              <b><span style="color: yellow">#</span>Country:</b> Netherlands
+            </p>
+          </div>
+          <div class="extra-info">
+            <b
+              ><a class="fav" th:href="@{/addmovie}"
+                ><span style="color: yellow">+</span> Add movie/review</a
+              ></b
+            >
+            <b
+              ><p class="fav">
+                <span style="color: yellow">❤</span> My favorite movies
+              </p></b
+            >
+          </div>
+          <div class="extra-info">
+            <b
+              ><p class="del" style="padding-top: 20px">
+                <span class="material-icons">delete</span> Delete my account
+              </p></b
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
