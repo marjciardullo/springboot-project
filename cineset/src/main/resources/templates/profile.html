@@ -18,14 +18,17 @@
     	<div class="stock-image"></div>
     	<div class="user-info">
     		<div class="username">
-    			<span class="material-icons">alternate_email</span><span class="user-name">madeleine_elster</span>
+                <div style="display: flex; align-items: center">
+        			<span class="material-icons">alternate_email</span><span class="user-name">madeleine_elster</span>
+                </div>
+                <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
     		</div>
     		<div class="userbio">
     			<p>Hi :) I'm Maddie and I've loved movies since I was young. I love using Cineset to keep track
     			of all the movies I've been watching and enjoying lately. I'm also able to leave reviews and save the ones I liked
     			best!</p>
 
-    			<p><b>I can't wait to watch more movies</b>and then lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    			<p><b>I can't wait to watch more movies</b>and then lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
     			<p>At vero eos et accusamus <i>et iusto odio dignissimos ducimus qui blanditiis</i> praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
 
@@ -35,8 +38,12 @@
 			    	<p><b><span style="color:yellow">#</span>Country:</b> Netherlands</p>
 			    </div>
 			    <div class="extra-info">
+					<b><p class="fav"><span style="color:yellow">+</span> Add movie/review</p></b>
 			    	<b><p class="fav"><span style="color:yellow">❤</span> My favorite movies</p></b>
 			    </div>
+                <div class="extra-info">
+                    <b><p class="del" style="padding-top: 20px;"><span class="material-icons">delete</span> Delete my account</p></b>
+                </div>
     		</div>
     	</div>
     </div>

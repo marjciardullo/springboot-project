@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+    <head>
+        <meta charset="UFT-8">
+        <title>Add New Review</title>
+        	<link rel="stylesheet" type="text/css" th:href="@{assets/css/add-movie.css}"/>
+        	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
+        	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+        	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+<body>
+	<div class="logo">
+		<span class="title">Cineset</span>
+	</div>
+    <div class="container">
+    	<div class="title-info">
+    		<div class="page-title">
+                <div style="display: flex; align-items: center;">
+        			<span class="material-icons">movie_filter</span><span class="title-name">Add a New Review</span>
+                </div>
+                <a th:href="@{/mymovies}" class="cancel material-icons">cancel</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <form class="form">
+                <div class="movie-infos">
+                    <div class="first-section">
+                        <div style="display: flex; align-items: center">
+                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" name="NOMEFILME">
+                        </div>
+                        <div style="display: flex; align-items: center">
+                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" name="NOMEFILME">
+                        </div><div style="display: flex; align-items: center">
+                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" name="NOMEFILME">
+                        </div>
+                    </div>
+                </div>
+                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review"></textarea>
+                <div style="display: flex; justify-content: flex-end;align-items: flex-end;">
+                    <button type="submit" name="button">Save Review</button>
+                </div>
+            </form>
+        </div>
+    	</div>
+    </div>
+</body>
+</html>
