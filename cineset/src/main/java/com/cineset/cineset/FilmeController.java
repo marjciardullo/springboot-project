@@ -35,7 +35,7 @@ public class FilmeController {
     public String postUsuario(@ModelAttribute Filmes film, Model model) {
         FilmesService fService = context.getBean(FilmesService.class);
         fService.insertFilme(film);
-        return "mymovies";
+        return "redirect:/filme";
     }
 
     @GetMapping("/filmes/{IDFILME}")
