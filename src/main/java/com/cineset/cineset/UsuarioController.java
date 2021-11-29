@@ -32,7 +32,7 @@ public class UsuarioController {
     public String postUsuario(@ModelAttribute Usuario user, Model model) {
         UsuarioService uService = context.getBean(UsuarioService.class);
         uService.insertUsuario(user);
-        return "profile";
+        return "index";
     }
 
     @GetMapping("/profile/{ID}")
