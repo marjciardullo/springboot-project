@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+//import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -35,8 +36,8 @@ public class UsuarioDAO {
 
     public Map<String, Object> selectUsuario(int ID) {
         String sql = "SELECT * FROM Usuario WHERE Usuario.ID = ?";
-        Object[] object = new Object[1];
-        object[0] = ID;
-        return jdbc.queryForMap(sql, object);
+        Object[] obj = new Object[1];
+        obj[0] = ID;
+        return jdbc.queryForMap(sql, obj);
     }
 }

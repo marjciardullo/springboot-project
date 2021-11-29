@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html xmlns:th="http:www.thymeleaf.org">
-    <head>
-        <meta charset="UFT-8">
-        <title>My Movies</title>
-        	<link rel="stylesheet" type="text/css" th:href="@{assets/css/mymovies.css}"/>
-        	<link rel="stylesheet" type="text/css" href="../static/assets/css/mymovies.css"/>
-        	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
-        	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
-        	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-<body>
-	<div class="logo">
-		<span class="title">Cineset</span>
-	</div>
-    <div class="container">
-    	<div class="title-info">
-    		<div class="page-title">
-                <div style="display: flex; align-items: center;">
-        			<span class="material-icons">movie</span><span class="title-name">My Movies</span>
-                </div>
-                <a th:href="@{/add}" class="add material-icons">add</a>
-    		</div>
-            <div class="movies-wrapper">
-                <div class="movie">
-                    <div class="crud">
-                        <span class="material-icons">edit</span>
-                        <span class="material-icons">delete</span>
-                    </div>
-                    <div class="movie-name">Casablanca</div>
-                    <div class="movie-infos">(1942) - Dir. Michael Curtiz</div>
-                    <div class="movie-review">"I loved this movie! A true classic, I could watch it forever and ever and ever and ever"</div>
-                </div>
-            </div>
-    	</div>
+  <head>
+    <meta charset="UFT-8" />
+    <title>My Movies</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{/assets/css/mymovies.css}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/assets/css/mymovies.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="logo">
+      <span class="title">Cineset</span>
     </div>
-</body>
+    <div class="container">
+      <div class="title-info">
+        <div class="page-title">
+          <div style="display: flex; align-items: center">
+            <span class="material-icons">movie</span
+            ><span class="title-name">My Movies</span>
+          </div>
+          <a th:href="@{/addmovie}" class="add material-icons">add</a>
+        </div>
+        <div class="movies-wrapper">
+          <div class="movie" th:each="filme : ${filmes}">
+            <div class="crud">
+              <a th:href="@{/editmovie}"
+                ><span class="material-icons">edit</span></a
+              >
+              <form
+                th:action="@{'delete/filme/' + ${filme.IDFILME}}"
+                method="post"
+              >
+                <input type="submit" class="material-icons" />delete
+              </form>
+            </div>
+            <div class="movie-name" th:text="${filme.TITULO}"></div>
+            <div class="movie-infos" th:text="${filme.BIRTHYEAR}"></div>
+            <div class="movie-infos" th:text="${filme.DIRETOR}"></div>
+            <div class="movie-review" th:text="${filme.SINOPSE}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

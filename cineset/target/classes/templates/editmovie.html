@@ -3,7 +3,7 @@
     <head>
         <meta charset="UFT-8">
         <title>Edit Review</title>
-        	<link rel="stylesheet" type="text/css" th:href="@{assets/css/edit-movie.css}"/>
+        	<link rel="stylesheet" type="text/css" th:href="@{/assets/css/edit-movie.css}"/>
         	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
         	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
         	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
@@ -23,16 +23,17 @@
             </div>
         </div>
         <div class="movie-card">
-            <form class="form">
+            <form class="form" action="#" th:action="@{'/update/' + ${IDFILME}}" method=post th:object="${film}">
+                <input type="hidden" field="*{IDFILME}" name="IDFILME" value="1"/>
                 <div class="movie-infos">
                     <div class="first-section">
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" name="NOMEFILME" value="Casablanca">
+                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" field="*{TITULO}" name="TITULO" />
                         </div>
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" name="NOMEFILME" value="Michael Curtiz">
+                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" field="*{DIRETOR}" name="DIRETOR" />
                         </div><div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" name="NOMEFILME" value="1942">
+                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" field="*{BIRTHYEAR}" name="BIRTHYEAR" />
                         </div>
                     </div>
                 </div>

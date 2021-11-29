@@ -37,4 +37,14 @@ public class CinesetController {
         return "addmovie";
     }
 
+    @GetMapping("/mymovies")
+    public String mymovies() {
+        return "mymovies";
+    }
+
+    @GetMapping("/editmovie")
+    public String editmovie() {
+        return "editmovie";
+    }
+
 }

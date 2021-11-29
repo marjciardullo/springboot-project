@@ -4,20 +4,19 @@ package com.model;
 //import org.yaml.snakeyaml.events.Event.ID;
 
 public class Filmes {
-    private String TITULO, GENEROFILME, DIRETOR, SINOPSE;
-    private int BIRTHYEAR, IDFILME;
+    private String TITULO, DIRETOR, BIRTHYEAR, SINOPSE;
+
+    private int IDFILME;
 
     public Filmes() {
     }
 
-    public Filmes(String TITULO, String GENEROFILME, String DIRETOR, String IMAGEM_LINK, String SINOPSE, int BIRTHYEAR,
-            int IDFILME) {
+    public Filmes(int IDFILME, String TITULO, String DIRETOR, String BIRTHYEAR, String SINOPSE) {
         this.TITULO = TITULO;
-        this.GENEROFILME = GENEROFILME;
         this.DIRETOR = DIRETOR;
-        this.SINOPSE = SINOPSE;
         this.BIRTHYEAR = BIRTHYEAR;
         this.IDFILME = IDFILME;
+        this.SINOPSE = SINOPSE;
     }
 
     public String getTITULO() {
@@ -28,14 +27,6 @@ public class Filmes {
         this.TITULO = TITULO;
     }
 
-    public String getGENEROFILME() {
-        return GENEROFILME;
-    }
-
-    public void setGENEROFILME(String GENEROFILME) {
-        this.GENEROFILME = GENEROFILME;
-    }
-
     public String getDIRETOR() {
         return DIRETOR;
     }
@@ -44,20 +35,20 @@ public class Filmes {
         this.DIRETOR = DIRETOR;
     }
 
+    public String getBIRTHYEAR() {
+        return BIRTHYEAR;
+    }
+
+    public void setBIRTHYEAR(String BIRTHYEAR) {
+        this.BIRTHYEAR = BIRTHYEAR;
+    }
+
     public String getSINOPSE() {
         return SINOPSE;
     }
 
     public void setSINOPSE(String SINOPSE) {
         this.SINOPSE = SINOPSE;
-    }
-
-    public int getBIRTHYEAR() {
-        return BIRTHYEAR;
-    }
-
-    public void setBIRTHYEAR(int BIRTHYEAR) {
-        this.BIRTHYEAR = BIRTHYEAR;
     }
 
     public int getIDFILME() {
