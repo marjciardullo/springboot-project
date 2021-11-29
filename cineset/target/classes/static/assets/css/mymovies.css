@@ -66,10 +66,13 @@ body {
 	border: 2px solid #fff;
 	border-radius: 50px;
 	user-select: none;
+	text-decoration: none;
+	color: white
 }
 
 .add:hover {
 	border-color: yellow;
+	color: yellow;
 }
 
 .material-icons {
@@ -117,9 +120,35 @@ body {
 .crud .material-icons {
 	margin: 0;
 	padding-left: 5px;
+	color: white;
+	text-decoration: none;
 }
 
 .material-icons:hover {
 	color: yellow;
 	cursor: pointer;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: yellow;
+}
+
+input {
+	background-color: transparent;
+    border-color: transparent;
+    color: white;
+}
+
+input:hover {
+	color: yellow;
+}
+
+.edit {
+	color: white;
+	text-decoration: none;
 }

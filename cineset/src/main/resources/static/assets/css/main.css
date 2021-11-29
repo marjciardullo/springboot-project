@@ -120,3 +120,14 @@ h1 {
     text-shadow: 0 0 6px #fff;
   }
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.sign-in {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}

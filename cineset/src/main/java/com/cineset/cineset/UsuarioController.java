@@ -1,6 +1,5 @@
 package com.cineset.cineset;
 
-//import java.util.List;
 import java.util.Map;
 
 import com.model.Usuario;
@@ -33,7 +32,7 @@ public class UsuarioController {
     public String postUsuario(@ModelAttribute Usuario user, Model model) {
         UsuarioService uService = context.getBean(UsuarioService.class);
         uService.insertUsuario(user);
-        return "index";
+        return "profile";
     }
 
     @GetMapping("/profile/{ID}")

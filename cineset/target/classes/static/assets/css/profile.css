@@ -91,6 +91,8 @@ body {
 .edit-button {
 	margin-right: 10px;
 	cursor: pointer;
+	color: white;
+	text-decoration: none;
 }
 
 .edit-button:hover {
@@ -142,6 +144,8 @@ p {
 .extra-info .fav {
 	margin-top: 5px;
 	cursor: pointer;
+	color: white;
+	text-decoration: none;
 }
 
 .extra-info .del {
