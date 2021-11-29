@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http:www.thymeleaf.org">
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>About</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
         <link rel="stylesheet" type="text/css" th:href="@{assets/css/about.css}"/>
+        <link rel="stylesheet" type="text/css" href="../static/assets/css/about.css"/>
     </head>
 <body>
     <header>
@@ -16,8 +20,7 @@
         </div>
         <ul>
             <li class="underline-effect"><a th:href="@{/about}">About us</a></li>
-            <li class="underline-effect"><a th:href="@{/signup}">Join us!</a></li>
-            <li class="underline-effect"><a th:href="@{/profile}">Check your profile</a></li>
+            <li class="underline-effect"><a th:href="@{/login}">Join us!</a></li>
         </ul>
     </header>
 
@@ -26,9 +29,9 @@
         <div class="starcontainer">
           <h2>About us</h2>
         
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus felis nec nulla pellentesque, in iaculis libero suscipit. Suspendisse ullamcorper hendrerit nibh eu facilisis. Donec cursus, est eu aliquam elementum, velit lacus tempus risus, et congue purus eros id tellus. Nulla facilisi. Pellentesque id augue euismod, fermentum leo quis, sagittis libero. Aliquam erat volutpat. Etiam maximus dolor sit amet neque ullamcorper vestibulum. </p>
-      
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus felis nec nulla pellentesque, in iaculis libero suscipit. Suspendisse ullamcorper hendrerit nibh eu facilisis. Donec cursus, est eu aliquam elementum, velit lacus tempus risus, et congue purus eros id tellus. Nulla facilisi. Pellentesque id augue euismod, fermentum leo quis, sagittis libero. Aliquam erat volutpat. Etiam maximus dolor sit amet neque ullamcorper vestibulum. </p>
+          <p>Esse projeto foi criado com o framework Springboot, com back-end em Java e front-end em HTML e JavaScript.</p>
+          <p>Elaborado pelas alunas <b>Julia Gato Heitor</b> e <b>Marjorye Ciardullo Ramirez</b> para a matéria de <i>Desenvolvimento para Servidores I</i> no 4º ciclo do curso de Sistemas para Internet da Fatec Rubens Lara.</p>
+          <p>O "CineSet" é um site fictício, que permite que o usuário se cadastre, entre em uma conta e, nela, adicione resenhas de filmes. Uma vez adicionado o filme e a resenha, essas são listadas na sua página de filmes, onde o usuário poderá, além de adicionar mais, editar as entradas já existentes em sua lista, como apagá-las.</p>
         </div>
           </div>
       </section>

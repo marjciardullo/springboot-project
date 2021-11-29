@@ -8,11 +8,12 @@
         	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
         	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="../static/assets/css/add-movie.css"/>
     </head>
 <body>
-	<div class="logo">
-		<span class="title">Cineset</span>
-	</div>
+	<a th:href="@{/}" class="logo">
+		<span class="title">CineSet</span>
+	</a>
     <div class="container">
     	<div class="title-info">
     		<div class="page-title">
@@ -28,16 +29,16 @@
                 <div class="movie-infos">
                     <div class="first-section">
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" field="*{TITULO}" name="TITULO" />
+                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" th:value="${TITULO}" field="*{TITULO}" name="TITULO" />
                         </div>
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" field="*{DIRETOR}" name="DIRETOR" />
+                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" th:value="${DIRETOR}" field="*{DIRETOR}" name="DIRETOR" />
                         </div><div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" field="*{BIRTHYEAR}" name="BIRTHYEAR" />
+                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" th:value="${BIRTHYEAR}" field="*{BIRTHYEAR}" name="BIRTHYEAR" />
                         </div>
                     </div>
                 </div>
-                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review" field="*{SINOPSE}" name="SINOPSE">"My review of this movie is..."</textarea>
+                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review" field="*{SINOPSE}" name="SINOPSE"></textarea>
                 <div style="display: flex; justify-content: flex-end;align-items: flex-end;">
                     <button type="submit" name="button">Save Changes</button>
                 </div>

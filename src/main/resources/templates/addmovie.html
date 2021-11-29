@@ -8,18 +8,19 @@
         	<link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
         	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="../static/assets/css/add-movie.css"/>
     </head>
 <body>
-	<div class="logo">
-		<span class="title">Cineset</span>
-	</div>
+	<a th:href="@{/}" class="logo">
+		<span class="title">CineSet</span>
+	</a>
     <div class="container">
     	<div class="title-info">
     		<div class="page-title">
                 <div style="display: flex; align-items: center;">
         			<span class="material-icons">movie_filter</span><span class="title-name">Add a New Review</span>
                 </div>
-                <a th:href="@{/mymovies}" style="text-decoration: none; color:white;" class="cancel material-icons">cancel</a>
+                <a th:href="@{/mymovies}" class="cancel material-icons">cancel</a>
             </div>
         </div>
         <div class="movie-card">

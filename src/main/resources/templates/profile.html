@@ -24,12 +24,13 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/profile.css"/>
   </head>
   <body>
-    <div class="logo">
-      <span class="title">Cineset</span>
+    <a th:href="@{/}" class="logo">
+      <span class="title">CineSet</span>
       <span class="phrase">Tell us what you're watching</span>
-    </div>
+    </a>
     <div class="container">
       <div class="stock-image"></div>
       <div class="user-info">
@@ -38,7 +39,10 @@
             <span class="material-icons">alternate_email</span
             ><span class="user-name" th:text="${NOMEUSUARIO}"></span>
           </div>
-          <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
+          <div>
+            <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
+            <a th:href="@{/delete}" class="delete-button material-icons">delete</a>
+          </div>
         </div>
         <div class="userbio">
           <p>
@@ -63,10 +67,10 @@
 
           <div class="extra-info">
             <p>
-              <b><span style="color: yellow">#</span>Gender:</b> Female
+              <b><span style="color: yellow">#</span>Gender:</b> <span th:text="${GENERO}"></span>
             </p>
             <p>
-              <b><span style="color: yellow">#</span>Born:</b> 1995
+              <b><span style="color: yellow">#</span>Born:</b> <span th:text="${BIRTHYEAR}"></span>
             </p>
             <p>
               <b><span style="color: yellow">#</span>Country:</b> Netherlands
@@ -77,11 +81,6 @@
               ><a class="fav" th:href="@{/addmovie}"
                 ><span style="color: yellow">+</span> Add movie/review</a
               ></b
-            >
-            <b
-              ><p class="fav">
-                <span style="color: yellow">❤</span> My favorite movies
-              </p></b
             >
           </div>
         </div>

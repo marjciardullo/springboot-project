@@ -28,6 +28,12 @@ header .logo {
   padding-right: 500px;
 }
 
+.logo p {
+  font-family: 'Lobster', sans-serif;
+  font-size: 50px;
+  text-shadow: 2px 2px 10px black;
+}
+
 header ul {
   list-style: none;
   display: flex;
