@@ -94,7 +94,7 @@ body {
 }
 
 .movie {
-	max-width: 15%;
+	width: 15%;
     margin: 20px;
     background-color: #242526;
     padding: 10px;
@@ -115,6 +115,7 @@ body {
 .crud {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 }
 
 .crud .material-icons {
@@ -136,6 +137,10 @@ a {
 
 a:hover {
 	color: yellow;
+}
+
+.logo:hover {
+	color: white;
 }
 
 input {

@@ -99,6 +99,18 @@ body {
 	color: yellow;
 }
 
+.delete-button {
+	margin-right: 10px;
+	cursor: pointer;
+	color: white;
+	text-decoration: none;
+}
+
+.delete-button:hover {
+	color: red;
+}
+
+
 .user-name {
 	font-family: 'Domine', serif;
 	font-size: 20px;
@@ -165,4 +177,9 @@ p {
 
 .del:hover {
 	color: red;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
