@@ -1,5 +1,8 @@
 package com.model;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
@@ -23,22 +26,44 @@ public class FilmesDAO {
     }
 
     public void insertfilme(Filmes filmes) {
-        String sql = "INSERT INTO Filmes(TITULO, GENEROFILME, DIRETOR, SINOPSE, BIRTHYEAR)" + "VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO Filmes(TITULO, DIRETOR, BIRTHYEAR, SINOPSE)" + "VALUES(?,?,?,?)";
 
-        Object[] object = new Object[5];
+        Object[] object = new Object[4];
         object[0] = filmes.getTITULO();
-        object[1] = filmes.getGENEROFILME();
-        object[2] = filmes.getDIRETOR();
+        object[1] = filmes.getDIRETOR();
+        object[2] = filmes.getBIRTHYEAR();
         object[3] = filmes.getSINOPSE();
-        object[4] = filmes.getBIRTHYEAR();
 
         jdbc.update(sql, object);
     }
 
-    // public Map<String, Object> selectfilme(int ID) {
-    // String sql = "SELECT * FROM Filmes WHERE Filmes.ID = ?";
-    // Object[] object = new Object[1];
-    // object[0] = ID;
-    // return jdbc.queryForMap(sql, object);
-    // }
+    public Map<String, Object> selectfilme(int IDFILME) {
+        String sql = "SELECT * FROM Filmes WHERE Filmes.IDFILME = ?";
+        Object[] object = new Object[1];
+        object[0] = IDFILME;
+        return jdbc.queryForMap(sql, object);
+    }
+
+    public List<Map<String, Object>> getFilmes() {
+        String sql = "SELECT * FROM Filmes";
+        List<Map<String, Object>> filmes = (List<Map<String, Object>>) jdbc.queryForList(sql);
+        return filmes;
+    }
+
+    public void deleteFilme(int IDFILME) {
+        String sql = "DELETE FROM Filmes WHERE IDFILME = ?";
+        Object[] obj = new Object[1];
+        obj[0] = IDFILME;
+        jdbc.update(sql, obj);
+    }
+
+    public void updateFilme(int IDFILME, Filmes filme) {
+        String sql = "UPDATE filme SET TITULO = ?, DIRETOR = ?, BIRTHYEAR = ? WHERE IDFILME = ?";
+        Object[] object = new Object[4];
+        object[0] = filme.getTITULO();
+        object[1] = filme.getDIRETOR();
+        object[2] = filme.getBIRTHYEAR();
+        object[3] = IDFILME;
+        jdbc.update(sql, object);
+    }
 }
