@@ -58,12 +58,13 @@ public class FilmesDAO {
     }
 
     public void updateFilme(int IDFILME, Filmes filme) {
-        String sql = "UPDATE filme SET TITULO = ?, DIRETOR = ?, BIRTHYEAR = ? WHERE IDFILME = ?";
-        Object[] object = new Object[4];
+        String sql = "UPDATE Filmes SET TITULO = ?, DIRETOR = ?, BIRTHYEAR = ?, SINOPSE = ? WHERE IDFILME = ?";
+        Object[] object = new Object[5];
         object[0] = filme.getTITULO();
         object[1] = filme.getDIRETOR();
         object[2] = filme.getBIRTHYEAR();
-        object[3] = IDFILME;
+        object[3] = filme.getSINOPSE();
+        object[4] = IDFILME;
         jdbc.update(sql, object);
     }
 }
