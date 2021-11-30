@@ -26,33 +26,20 @@
         <div class="movie-card">
             <form class="form"
             action="#"
-            th:action="@{/filmes}"
+            th:action="@{/addDiretor}"
             name="login"
             method="post"
-            th:object="${film}">
+            th:object="${diretor}">
                 <div class="movie-infos">
                     <div class="first-section">
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" field="*{TITULO}"
-                            name="TITULO">
-                        </div>
-                        <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><select class="user-name" field="*{DIRETOR}"
+                            <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Director" field="*{DIRETOR}"
                             name="DIRETOR">
-                            <option th:each="diretor: ${diretores}" th:text="${diretor.DIRETOR}" th:value="${diretor.IDDIRETOR}"></option>
-                        </select>
-                        
-                        <a th:href="@{/addDiretor}">Adicionar diretor</a>
-                        </div><div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" field="*{BIRTHYEAR}"
-                            name="BIRTHYEAR">
                         </div>
                     </div>
                 </div>
-                <textarea class="review" rows="12" cols="10" maxlength="500" placeholder="Your movie review" field="*{SINOPSE}"
-                name="SINOPSE"></textarea>
                 <div style="display: flex; justify-content: flex-end;align-items: flex-end;">
-                    <button type="submit" name="button">Save Review</button>
+                    <button type="submit" name="button">Save Director</button>
                 </div>
             </form>
         </div>

@@ -1,9 +1,11 @@
 package com.cineset.cineset;
 
 import java.util.Map;
+import java.io.Console;
 import java.util.List;
 //import java.util.Map;
 
+import com.model.DiretorService;
 import com.model.Filmes;
 import com.model.FilmesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class FilmeController {
 
     @GetMapping("/filmes")
     public String login(Model model) {
+        DiretorService dService = context.getBean(DiretorService.class);
+        List<Map<String, Object>> diretores = dService.select();
+        model.addAttribute("diretores", diretores);
         model.addAttribute("film", new Filmes());
         return "addmovie";
     }
@@ -58,7 +63,7 @@ public class FilmeController {
     }
 
     @PostMapping("/delete/filme/{IDFILME}")
-    public String apagarCliente(@PathVariable("IDFILME") int IDFILME) {
+    public String apagarFilme(@PathVariable("IDFILME") int IDFILME) {
         FilmesService fService = context.getBean(FilmesService.class);
         fService.deleteFilme(IDFILME);
         return "redirect:/filme";

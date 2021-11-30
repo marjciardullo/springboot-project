@@ -24,7 +24,11 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="../static/assets/css/profile.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/assets/css/profile.css"
+    />
   </head>
   <body>
     <a th:href="@{/}" class="logo">
@@ -39,9 +43,19 @@
             <span class="material-icons">alternate_email</span
             ><span class="user-name" th:text="${NOMEUSUARIO}"></span>
           </div>
-          <div>
+          <div th:each="usuario : ${usuarios}">
             <a th:href="@{/edit}" class="edit-button material-icons">edit</a>
-            <a th:href="@{/delete}" class="delete-button material-icons">delete</a>
+            <form
+              th:action="@{'delete/usuarios/' + ${usuario.ID}}"
+              method="post"
+            >
+              <input
+                type="submit"
+                class="delete-button material-icons"
+                name="button"
+                value="delete"
+              />
+            </form>
           </div>
         </div>
         <div class="userbio">
@@ -67,10 +81,12 @@
 
           <div class="extra-info">
             <p>
-              <b><span style="color: yellow">#</span>Gender:</b> <span th:text="${GENERO}"></span>
+              <b><span style="color: yellow">#</span>Gender:</b>
+              <span th:text="${GENERO}"></span>
             </p>
             <p>
-              <b><span style="color: yellow">#</span>Born:</b> <span th:text="${BIRTHYEAR}"></span>
+              <b><span style="color: yellow">#</span>Born:</b>
+              <span th:text="${BIRTHYEAR}"></span>
             </p>
             <p>
               <b><span style="color: yellow">#</span>Country:</b> Netherlands
