@@ -32,8 +32,10 @@
                             <b><span style="color:yellow">#</span>Title:</b><input class="user-name" type="text" placeholder="Movie Title" th:value="${TITULO}" field="*{TITULO}" name="TITULO" />
                         </div>
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><input class="user-name" type="text" placeholder="Director" th:value="${DIRETOR}" field="*{DIRETOR}" name="DIRETOR" />
-                        </div><div style="display: flex; align-items: center">
+                            <b><span style="color:yellow">#</span>Director:</b><select class="user-name" field="*{IDDIRETOR}"
+                            name="IDDIRETOR">
+                            <option th:each="diretor: ${diretores}" th:text="${diretor.DIRETOR}" th:value="${diretor.IDDIRETOR}"></option>
+                        </select></div><div style="display: flex; align-items: center">
                             <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" th:value="${BIRTHYEAR}" field="*{BIRTHYEAR}" name="BIRTHYEAR" />
                         </div>
                     </div>

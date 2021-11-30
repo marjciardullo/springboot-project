@@ -13,7 +13,7 @@ public class FilmesService {
     @Autowired
     FilmesDAO filmeDao;
 
-    public void insertFilme(Filmes film) {
+    public void insertFilme(FilmeDTO film) {
         filmeDao.insertfilme(film);
     }
 
@@ -29,7 +29,7 @@ public class FilmesService {
         filmeDao.deleteFilme(IDFILME);
     }
 
-    public void updateFilme(int IDFILME, Filmes filme) {
+    public void updateFilme(int IDFILME, FilmeDTO filme) {
         filmeDao.updateFilme(IDFILME, filme);
     }
 }

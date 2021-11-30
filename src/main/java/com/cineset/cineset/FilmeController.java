@@ -6,6 +6,7 @@ import java.util.List;
 //import java.util.Map;
 
 import com.model.DiretorService;
+import com.model.FilmeDTO;
 import com.model.Filmes;
 import com.model.FilmesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,12 @@ public class FilmeController {
         DiretorService dService = context.getBean(DiretorService.class);
         List<Map<String, Object>> diretores = dService.select();
         model.addAttribute("diretores", diretores);
-        model.addAttribute("film", new Filmes());
+        model.addAttribute("film", new FilmeDTO());
         return "addmovie";
     }
 
     @PostMapping("/filmes")
-    public String postUsuario(@ModelAttribute Filmes film, Model model) {
+    public String postUsuario(@ModelAttribute FilmeDTO film, Model model) {
         FilmesService fService = context.getBean(FilmesService.class);
         fService.insertFilme(film);
         return "redirect:/filme";
@@ -73,17 +74,22 @@ public class FilmeController {
     public String updateFilme(@PathVariable("IDFILME") int IDFILME, Model model) {
         FilmesService fService = context.getBean(FilmesService.class);
         Map<String, Object> info = fService.selectfilme(IDFILME);
-        Filmes film = new Filmes(IDFILME, info.get("TITULO").toString(), info.get("DIRETOR").toString(),
+        Filmes film = new Filmes(IDFILME, info.get("TITULO").toString(), info.get("IDDIRETOR").toString(),
                 info.get("BIRTHYEAR").toString(), info.get("SINOPSE").toString());
         model.addAttribute("film", film);
         model.addAttribute("IDFILME", IDFILME);
+
+        DiretorService dService = context.getBean(DiretorService.class);
+        List<Map<String, Object>> diretores = dService.select();
+        model.addAttribute("diretores", diretores);
+
         return "editmovie";
     }
 
     @PostMapping("/update/{IDFILME}")
     public String updateFilme(@PathVariable("IDFILME") int IDFILME,
             Model model,
-            @ModelAttribute Filmes film) {
+            @ModelAttribute FilmeDTO film) {
         FilmesService filmesService = context.getBean(FilmesService.class);
         filmesService.updateFilme(IDFILME, film);
         return "redirect:/filme";

@@ -37,12 +37,12 @@
                             name="TITULO">
                         </div>
                         <div style="display: flex; align-items: center">
-                            <b><span style="color:yellow">#</span>Director:</b><select class="user-name" field="*{DIRETOR}"
-                            name="DIRETOR">
+                            <b><span style="color:yellow">#</span>Director:</b><select class="user-name" field="*{IDDIRETOR}"
+                            name="IDDIRETOR">
                             <option th:each="diretor: ${diretores}" th:text="${diretor.DIRETOR}" th:value="${diretor.IDDIRETOR}"></option>
                         </select>
                         
-                        <a th:href="@{/addDiretor}">Adicionar diretor</a>
+                        <!-- <a th:href="@{/addDiretor}">Adicionar diretor</a> -->
                         </div><div style="display: flex; align-items: center">
                             <b><span style="color:yellow">#</span>Year:</b><input class="user-name" type="text" placeholder="Year" field="*{BIRTHYEAR}"
                             name="BIRTHYEAR">
