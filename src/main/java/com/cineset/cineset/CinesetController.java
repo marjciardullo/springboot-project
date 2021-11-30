@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.model.Diretor;
 import com.model.DiretorService;
+import com.model.FilmeDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -49,6 +50,7 @@ public class CinesetController {
         DiretorService dService = context.getBean(DiretorService.class);
         List<Map<String, Object>> diretores = dService.select();
         model.addAttribute("diretores", diretores);
+        model.addAttribute("film", new FilmeDTO());
         return "addmovie";
     }
 
@@ -58,7 +60,11 @@ public class CinesetController {
     }
 
     @GetMapping("/editmovie")
-    public String editmovie() {
+    public String editmovie(Model model) {
+        DiretorService dService = context.getBean(DiretorService.class);
+        List<Map<String, Object>> diretores = dService.select();
+        model.addAttribute("diretores", diretores);
+        model.addAttribute("film", new FilmeDTO());
         return "editmovie";
     }
 
