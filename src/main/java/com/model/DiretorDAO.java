@@ -1,5 +1,6 @@
 package com.model;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -11,7 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ReviewDAO {
+public class DiretorDAO {
 
     @Autowired
     DataSource dataSource;
@@ -22,20 +23,19 @@ public class ReviewDAO {
         jdbc = new JdbcTemplate(dataSource);
     }
 
-    public void insertReview(Review review) {
-        String sql = "INSERT INTO Reviews(REVIEW)" + "VALUES(?)";
+    public void insert(Diretor diretor) {
+        String sql = "INSERT INTO Diretor(DIRETOR) VALUES(?)";
 
         Object[] object = new Object[1];
-        object[0] = review.getREVIEW();
+        object[0] = diretor.getDIRETOR();
 
         jdbc.update(sql, object);
     }
 
-    public Map<String, Object> selecReview(int IDREVIEW) {
-        String sql = "SELECT * FROM Reviews WHERE Reviews.IDREVIEW = ?";
-        Object[] object = new Object[1];
-        object[0] = IDREVIEW;
-        return jdbc.queryForMap(sql, object);
+    public List<Map<String, Object>> select() {
+        String sql = "SELECT * FROM Diretor";
+        List<Map<String, Object>> diretores = (List<Map<String, Object>>) jdbc.queryForList(sql);
+        return diretores;
     }
 
 }

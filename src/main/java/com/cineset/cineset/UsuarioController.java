@@ -1,5 +1,6 @@
 package com.cineset.cineset;
 
+import java.util.List;
 import java.util.Map;
 
 import com.model.Usuario;
@@ -32,7 +33,8 @@ public class UsuarioController {
     public String postUsuario(@ModelAttribute Usuario user, Model model) {
         UsuarioService uService = context.getBean(UsuarioService.class);
         uService.insertUsuario(user);
-        return "index";
+        Map<String, Object> infos = uService.selectInfo(user.getEMAIL(), user.getSENHA());
+        return "redirect:/profile/" + infos.get("ID");
     }
 
     @GetMapping("/profile/{ID}")
@@ -41,5 +43,20 @@ public class UsuarioController {
         Map<String, Object> map = uService.selectUsuario(ID);
         model.addAttribute("NOMEUSUARIO", map.get("NOMEUSUARIO"));
         return "profile";
+    }
+
+    @GetMapping("/usuarios")
+    public String listaUsuarios(Model model) {
+        UsuarioService uService = context.getBean(UsuarioService.class);
+        List<Map<String, Object>> usuarios = uService.getUsuarios();
+        model.addAttribute("usuarios", usuarios);
+        return "profile";
+    }
+
+    @PostMapping("/delete/usuarios/{ID}")
+    public String apagarUsuario(@PathVariable("ID") int ID) {
+        UsuarioService uService = context.getBean(UsuarioService.class);
+        uService.deleteUsuario(ID);
+        return "redirect:/usuarios";
     }
 }
